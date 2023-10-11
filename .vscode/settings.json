@@ -1,0 +1,11 @@
+{
+    "sqltools.connections": [
+        {
+            "previewLimit": 50,
+            "driver": "SQLite",
+            "name": "dwbackend",
+            "database": "./App_Data/yessql.db"
+        }
+    ],
+    "sqltools.useNodeRuntime": true
+}
