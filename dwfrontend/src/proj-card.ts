@@ -9,45 +9,50 @@ import { customElement, property } from 'lit/decorators.js'
  */
 @customElement('proj-card')
 export class ProjectCard extends LitElement {
-  @property({type: String}) projDetails ='Some detailed description of the project.';
+  @property({type: String}) projDetails ='detailed description is missing';
   @property({type: Boolean}) show = false;
+  @property({type: String}) projUrl = 'url not submitted';
   /* playground-fold-end */
 
   render() {
     return html`
       <div class="card">
+
         <p>
-          <img src="./src/assets/g4g.png" @click=${() => this.show = !this.show} part="g4g">
+          <button @click=${() => this.show = !this.show}>Project Details</button>
+          <img src="./src/assets/${this.projUrl}" @click=${() => this.show = !this.show} part="g4g">
         </p>
 
-        <button @click=${() => this.show = !this.show}>Details</button>
-        </p>
+
         <p>
           ${this.show ? html`${this.projDetails}` : ''}
-        </p>
+        </p>      
       </div>
     `;
   }
 
-  private _onClick() {
-    this.toggleText = !this.toggleText
-  }
-
   static styles = css`
     :host {
-      max-width: 1280px;
       margin: 0 auto;
       padding: 2rem;
     }
     .card {
       /* using variable */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 60%;
+      flex-wrap: true;
+      flex-grow: 1;
       background-color: var(--my-background, tan);
       border-radius: 1.2em;
       padding: 2em;
     }
 
-    .card img {
-      width: 65px;
+    .card img { 
+      float: left;
+      width: 125px;
+      border-radius: 5px;
     }
 
     ::slotted(h3) {
@@ -56,17 +61,19 @@ export class ProjectCard extends LitElement {
     }
 
     button {
+      margin-left: 10px;
       border-radius: 8px;
       border: 1px solid transparent;
-      padding: 0.6em 1.2em;
-      font-size: 1em;
+      font-size: .8em;
       font-weight: 500;
+      width: 55px;
+      height: 40px;
       font-family: inherit;
-      background-color: #494732;
+      background-color: #54544e;
       cursor: pointer;
       transition: border-color 0.25s;
     }
-    g4g:hover {
+    button:hover {
       border-color: #646cff;
     }
     g4g:focus,
