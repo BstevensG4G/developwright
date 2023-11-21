@@ -1,6 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
-import SiteTemplate from './components/sitetemplate'
+import SiteTemplate from './sitetemplate'
 import HomePage from './pages/Home'
 import AboutPage from './pages/About'
 import PortfolioPage from './pages/Portfolio'

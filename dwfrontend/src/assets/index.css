@@ -1,58 +1,44 @@
 :root {
-  max-width: 1440px;
-  font-family:Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  font-weight: 400;
-  color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-text-size-adjust: 100%;
   }
 @font-face {
   font-family: vt220;
   src: url("./Glass_TTY_VT220.ttf");   
 }
+html {
+  max-width: 1280;  
+}
 body {
+  margin-left: 2%;
+  margin-top: 2%;
+  margin-right: 2%;
   display: grid;
   grid-template:
-      "head head" 110px
-      "nav nav" 75px
-      "main main" minmax(550px, auto)
-      "foot foot" 110px;
+      "header header header" 100px
+      "nav nav nav" 75px
+      "main main aside" minmax(350px, auto)
+      "main main aside" minmax(200px, auto)      
+      "footer footer footer" 110px;
 }  
-html > * {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;   
-}
 h1 {
   font-size: 7vw;
 }
 h2 {
-  font-size: 2.5vh;
+  font-size: 3vw;
 }
 h3 {
-  font-size: 3vw;
+  font-size: 2vw;
 }
 p {
   font-size: 1vh;
 }
 header {
-  display: flex;
-  align-content: center;
-  flex-direction: column;    
-  background-color: #242424;
-  margin-top: 10px;
-  margin-left: 15px;
-  margin-right: 15px;
   grid-area: head;
+  background-color: #242424;
   line-height: 0.8em;
 }
 .bannerText {
-  flex-grow: inherit;
   justify-content: center;
   padding-left: 10px;
   border-radius: 25px;
@@ -62,7 +48,7 @@ header {
   background-color: rgba(3, 23, 15, 0.536);
   color: rgb(188, 227, 199);
   font-family: vt220;
-
+  background-size: cover;
   text-shadow:    1px 1px rgb(14, 45, 32, .75),
                   1px 2px rgb(14, 45, 32, .75),
                   1px 3px rgb(14, 45, 32, .75),
@@ -70,25 +56,20 @@ header {
                   0px 0px 10px rgba(14, 92, 37, 0.5),
                   0px 0px 30px rgba(22, 113, 57, 0.4),
                   0px 0px 55px rgba(44, 232, 160, 0.302);
+  animation: flicker 0.15s infinite;                  
 }
-nav {
+.navBar {
   margin-left: 3em;
   grid-area: nav;
-}
-nav ul {
-  text-align: center;
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 2px;
-  justify-content: space-around;
+  display: flex;   
+  justify-content: space-around; 
 }
 main {
     margin-left: 5vw;
     min-height: 55vh;
     grid-area: main;
 }
-.footer {
+footer {
   grid-area: foot;        
 }
 .blogPage h1{
@@ -101,27 +82,7 @@ main {
 .blogPost h3 {
   font-size: 1.5vw;
 }
-.headerText:hover {
-    animation-name: rotate;
-    animation-duration: 0.7s;
-}
-@keyframes rotate{
-    0%{
-        transform: rotate(2);
-    }
-    12%{
-        transform: rotate(-6);
-    }
-    36%{
-        transform: rotate(6);
-    }
-    55%{
-        transform: rotate(-6);
-    }
-    77%{
-        transform: rotate(6);
-    }                
-}
+
 main p{
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 10pt;
@@ -135,6 +96,7 @@ a {
 a:hover {
   color: #535bf2;
 }
+
 .social-icon__item {
   list-style: none;
 }
@@ -157,161 +119,66 @@ footer {
 }
 @keyframes flicker {
     0% {
-      opacity: 0.27861;
-    }
-    5% {
-      opacity: 0.34769;
+      opacity: 0.95;
     }
     10% {
-      opacity: 0.23604;
-    }
-    15% {
-      opacity: 0.90626;
+      opacity: 0.65;
     }
     20% {
-      opacity: 0.18128;
-    }
-    25% {
-      opacity: 0.83891;
+      opacity: 0.85;
     }
     30% {
-      opacity: 0.65583;
-    }
-    35% {
-      opacity: 0.67807;
+      opacity: 0.65;
     }
     40% {
-      opacity: 0.26559;
-    }
-    45% {
-      opacity: 0.84693;
+      opacity: 0.60;
     }
     50% {
-      opacity: 0.96019;
-    }
-    55% {
-      opacity: 0.08594;
+      opacity: 0.95;
     }
     60% {
-      opacity: 0.20313;
-    }
-    65% {
-      opacity: 0.71988;
+      opacity: 0.75;
     }
     70% {
-      opacity: 0.53455;
-    }
-    75% {
-      opacity: 0.37288;
+      opacity: 0.55;
     }
     80% {
-      opacity: 0.71428;
-    }
-    85% {
-      opacity: 0.70419;
+      opacity: 0.75;
     }
     90% {
-      opacity: 0.7003;
-    }
-    95% {
-      opacity: 0.36108;
+      opacity: 0.95;
     }
     100% {
-      opacity: 0.24387;
+      opacity: 0.75;
     }
   }
-  @keyframes textShadow {
-    0% {
-      text-shadow: 0.4389924193300864px 0 1px rgba(0,30,255,0.5), -0.4389924193300864px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    5% {
-      text-shadow: 2.7928974010788217px 0 1px rgba(0,30,255,0.5), -2.7928974010788217px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    10% {
-      text-shadow: 0.02956275843481219px 0 1px rgba(0,30,255,0.5), -0.02956275843481219px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    15% {
-      text-shadow: 0.40218538552878136px 0 1px rgba(0,30,255,0.5), -0.40218538552878136px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    20% {
-      text-shadow: 3.4794037899852017px 0 1px rgba(0,30,255,0.5), -3.4794037899852017px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    25% {
-      text-shadow: 1.6125630401149584px 0 1px rgba(0,30,255,0.5), -1.6125630401149584px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    30% {
-      text-shadow: 0.7015590085143956px 0 1px rgba(0,30,255,0.5), -0.7015590085143956px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    35% {
-      text-shadow: 3.896914047650351px 0 1px rgba(0,30,255,0.5), -3.896914047650351px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    40% {
-      text-shadow: 3.870905614848819px 0 1px rgba(0,30,255,0.5), -3.870905614848819px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    45% {
-      text-shadow: 2.231056963361899px 0 1px rgba(0,30,255,0.5), -2.231056963361899px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    50% {
-      text-shadow: 0.08084290417898504px 0 1px rgba(0,30,255,0.5), -0.08084290417898504px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    55% {
-      text-shadow: 2.3758461067427543px 0 1px rgba(0,30,255,0.5), -2.3758461067427543px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    60% {
-      text-shadow: 2.202193051050636px 0 1px rgba(0,30,255,0.5), -2.202193051050636px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    65% {
-      text-shadow: 2.8638780614874975px 0 1px rgba(0,30,255,0.5), -2.8638780614874975px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    70% {
-      text-shadow: 0.48874025155497314px 0 1px rgba(0,30,255,0.5), -0.48874025155497314px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    75% {
-      text-shadow: 1.8948491305757957px 0 1px rgba(0,30,255,0.5), -1.8948491305757957px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    80% {
-      text-shadow: 0.0833037308038857px 0 1px rgba(0,30,255,0.5), -0.0833037308038857px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    85% {
-      text-shadow: 0.09769827255241735px 0 1px rgba(0,30,255,0.5), -0.09769827255241735px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    90% {
-      text-shadow: 3.443339761481782px 0 1px rgba(0,30,255,0.5), -3.443339761481782px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    95% {
-      text-shadow: 2.1841838852799786px 0 1px rgba(0,30,255,0.5), -2.1841838852799786px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
-    100% {
-      text-shadow: 2.6208764473832513px 0 1px rgba(0,30,255,0.5), -2.6208764473832513px 0 1px rgba(255,0,80,0.3), 0 0 3px;
-    }
+
+ /* CSS for the home page */
+  .home {
+    width: 65%;
+    margin-left: 10%;
+    margin-top: 3%;
+    padding: 2em, 1em;
   }
-  .crt::after {
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: rgba(18, 16, 16, 0.1);
-    opacity: 0;
-    z-index: 2;
-    pointer-events: none;
-    animation: flicker 0.15s infinite;
+/* CSS for the about page */
+   .about {
+    width: 65%;
+    margin-left: 10%;
+    margin-top: 3%;
+    padding: 2em, 1em;
   }
-  .crt::before {
-    content: " ";
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-    background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.25) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.06), rgba(0, 255, 0, 0.02), rgba(0, 0, 255, 0.06));
-    z-index: 2;
-    background-size: 100% 2px, 3px 100%;
-    pointer-events: none;
+/* CSS for the contact page */  
+  .contact {
+    width: 65%;
+    margin-left: 35%;
+    margin-top: 15%;
+    padding: 2em, 1em;
   }
-  .crt {
-    animation: textShadow 1.6s infinite;
+  /* CSS for the portfolio page */
+  .portfolio , img {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10%;
+    width: 45%;    
   }

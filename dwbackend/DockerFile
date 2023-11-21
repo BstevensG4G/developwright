@@ -1,0 +1,24 @@
+FROM mcr.microsoft.com/dotnet/aspnet:5.0 AS base
+WORKDIR /app
+EXPOSE 5000
+
+ENV ASPNETCORE_URLS=http://+:5000
+
+RUN dwadminuser -u 5678 --disabled-password --gecos "" dwadminuser && chown -R dwadminuser /dwbackend
+USER appuser
+
+FROM mcr.microsoft.com/dotnet/sdk:5.0 AS build
+WORKDIR /src
+COPY ["dwbackend.csproj", "./"]
+RUN dotnet restore "dwbackend.csproj"
+COPY . .
+WORKDIR "/src/."
+RUN dotnet build "dwbackend.csproj" -c Release -o /dwbackend/build
+
+FROM build AS publish
+RUN dotnet publish "dwbackend.csproj" -c Release -o /dwbackend/publish
+
+FROM base AS final
+WORKDIR /dwbackend
+COPY --from=publish /dwbackend/publish .
+ENTRYPOINT ["dotnet", "dwbackend.dll"]

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
 import '../assets/index.css'
-import BlogPost from '../components/blogpost'
+import BlogPost from '../components/blogposts'
 
 export interface IBlogPageProps {}
 
@@ -9,7 +9,7 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = () => {
     //const [BlogPost, setBlogPost] = useState([])
     const [posts, setPosts] = useState([])
     const fetchBlogData = () => {
-        fetch('http://127.0.0.1:5272/posts')
+        fetch('http://localhost:5000/posts')
             .then(response => {
                 return response.json()
             })
@@ -31,9 +31,9 @@ const BlogPage: React.FunctionComponent<IBlogPageProps> = () => {
         </div>
         {posts.length > 0 && (
         <ul>
-          {posts.map(post => (
-            <li key={post.id}>{post.title}</li>
-          ))}
+          {/* {posts.map(post => (
+           // <li key={post.id}>{post.title}{post.content}</li>
+          ))} */}
         </ul>
         )}
         <BlogPost />

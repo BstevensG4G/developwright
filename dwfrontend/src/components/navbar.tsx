@@ -9,18 +9,16 @@ const Navbar: React.FunctionComponent<INavbarProps> = () => {
     // const navigate = useNavigate()
     return (
         <>
-            <nav className="nav la la-bars">
-                <ul>
-                    <li><Link to="/"><i className="las la-home"></i>Home</Link></li>
-                    <li><Link to="/about"><i className="las la-info-circle"></i>About</Link></li>
-                    <li><Link to="/portfolio"><i className="las la-file-code"></i>Portfolio</Link></li>
-                    <li><Link to="/blog"><i className="las la-blog"></i>Blog</Link></li>
-                    <li><Link to="/contact"><i className="las la-address-book"></i>Contact</Link></li>
-                </ul>
+            <nav className="navBar">
+                <Link to="/"><i className="las la-home"></i>Home</Link>
+                <Link to="/about"><i className="las la-info-circle"></i>About</Link>
+                <Link to="/portfolio"><i className="las la-file-code"></i>Portfolio</Link>
+                <Link to="/blog"><i className="las la-blog"></i>Blog</Link>
+                <Link to="/contact"><i className="las la-address-book"></i>Contact</Link>
             </nav>
         {/* <button onClick={() => navigate('/layout/55')}>Go to layout, with a number</button> */}
         </>
-    );
-};
+    )
+}
 
 export default Navbar

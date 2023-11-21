@@ -2,6 +2,7 @@ using dwbackend.models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi.Models;
 
+var MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
 var builder = WebApplication.CreateBuilder(args);
 var connectionString = builder.Configuration.GetConnectionString("BlogPosts") ?? "Data Source=blogposts.db";
 
@@ -16,12 +17,15 @@ builder.Services.AddSwaggerGen(c =>
         Description = "My portfolio blog posts",
         Version = "v1"});
 });
-builder.Services.AddCors(options => options.AddDefaultPolicy(builder => 
-{ 
-    builder.WithOrigins(
-        "https://localhost:5173",
-        "https://localhost:5173/blog");
-}));
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(name: MyAllowSpecificOrigins,
+                      policy =>
+                      {
+                          policy.WithOrigins("http://localhost:5272/posts",
+                                              "http://localhost:5173");
+                      });
+});
 
 var app = builder.Build();
 
@@ -63,6 +67,6 @@ app.MapDelete("/post/{id}", async (BlogPostDb db, int id) =>
    await db.SaveChangesAsync();
    return Results.Ok();
 });
- app.UseCors();
+app.UseCors(MyAllowSpecificOrigins);
 
 app.Run();
