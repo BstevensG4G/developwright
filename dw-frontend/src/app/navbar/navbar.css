@@ -1,0 +1,18 @@
+.navbar {
+    background-color: rgb(100, 100, 100);
+    margin: 0.25em;
+    border-radius: 4px;
+    grid-area: nav;
+    display: flex;
+    justify-content: space-around; 
+}
+
+a {
+    text-shadow: rgba(3, 23, 15, 0.536);
+    font-weight: 500;
+    color:  lightgreen;
+    text-decoration: inherit;
+  }
+  a:hover {
+    color: #535bf2;
+  }

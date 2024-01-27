@@ -1,0 +1,28 @@
+footer {
+    margin-left: -3vw;
+    grid-area: foot;
+    text-align: center;
+    font: small;            
+}
+.social-icon__item {
+  list-style: none;
+}
+.social-icon {
+  margin-left: -35px;
+  display: flex;
+  justify-content: center;
+}
+.social-icon__link {
+  font-size: 2rem;
+  color: rgb(181, 199, 186);
+  transition: 0.5s;
+}
+.social-icon__link:hover {
+  transform: translateY(-10px);
+}
+
+
+
+
+
+  

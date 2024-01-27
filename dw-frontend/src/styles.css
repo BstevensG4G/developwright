@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+:root {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #242424;
+}
+
+body {
+  min-width: 370px;
+  margin-left: .5vw;
+  margin-top: 1%;
+  margin-right: 1%;
+  display: grid;
+  grid-template:
+      "header header header" minmax(100px, auto)
+      "nav nav nav" minmax(75px, auto)
+      "main main main" minmax(350px, auto)
+      "main main main" minmax(200px, auto)      
+      "footer footer footer" minmax(110px, auto);
+}
