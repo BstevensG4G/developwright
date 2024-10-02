@@ -1,0 +1,14 @@
+<div class="blog">
+    <h2>A Software Engineering Blog</h2>
+    <div>
+        <p>Notes and experiences with regards to becoming a more knowledgable and proficient
+            Software Engineer.
+        </p>
+        <ul>
+            @for (post of posts; track post.id) {
+            <li> {{post.title}}</li>
+            }
+
+        </ul>
+    </div>
+</div>

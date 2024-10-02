@@ -1,0 +1,84 @@
+@font-face {
+  font-family: vt220;
+  src: url("../../public/assets/Glass_TTY_VT220.ttf")
+}
+
+header {
+  grid-area: head;
+  background-color: #242424;
+  line-height: 0.8em;
+}
+
+#logo {
+  margin-left: 17px;
+  margin-top: 25px;
+  position: absolute;
+  width: 100px;
+}
+
+.bannerText {
+  justify-content: center;
+  padding-left: 10px;
+  border-radius: 12px;
+  text-align: center;
+  border: 1px solid rgb(78, 78, 81);
+  background-image: url("../../public/assets/diag_scan_lines.png");
+  background-color: rgba(3, 23, 15, 0.536);
+  color: rgb(188, 227, 199);
+  font-family: vt220;
+  background-size: cover;
+  text-shadow: 1px 1px rgb(14, 45, 32, .75),
+    1px 2px rgb(14, 45, 32, .75),
+    1px 3px rgb(14, 45, 32, .75),
+    1px 4px rgb(14, 45, 32, .75),
+    0px 0px 10px rgba(14, 92, 37, 0.5),
+    0px 0px 30px rgba(22, 113, 57, 0.4),
+    0px 0px 55px rgba(44, 232, 160, 0.302);
+  animation: flicker 0.15s infinite;
+}
+
+@keyframes flicker {
+  0% {
+    opacity: 0.95;
+  }
+
+  10% {
+    opacity: 0.65;
+  }
+
+  20% {
+    opacity: 0.85;
+  }
+
+  30% {
+    opacity: 0.65;
+  }
+
+  40% {
+    opacity: 0.60;
+  }
+
+  50% {
+    opacity: 0.95;
+  }
+
+  60% {
+    opacity: 0.75;
+  }
+
+  70% {
+    opacity: 0.55;
+  }
+
+  80% {
+    opacity: 0.75;
+  }
+
+  90% {
+    opacity: 0.95;
+  }
+
+  100% {
+    opacity: 0.75;
+  }
+}
