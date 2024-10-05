@@ -24,13 +24,11 @@ builder.Services.AddCors(options =>
     options.AddPolicy(name: MyAllowSpecificOrigins,
                       policy =>
                       {
-                          policy.WithOrigins("http://localhost:5272/posts",
-                                              "http://localhost:5272/post",
-                                              "http://localhost",
-                                              "http://127.0.0.1",
+                          policy.WithOrigins("http://localhost:4200/blog",
+                                              "http://127.0.0.1:4200/blog",
                                               "http:developwright.com",
-                                              "https:developwright.com")
-                                              //  .AllowAnyOrigin()
+                                              "https:developwright.com/api")
+                                              .AllowAnyOrigin()
                                               .AllowAnyHeader()
                                               .AllowAnyMethod();
                       });

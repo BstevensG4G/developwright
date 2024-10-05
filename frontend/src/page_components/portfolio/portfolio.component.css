@@ -1,13 +1,15 @@
   /* CSS for the portfolio page */
-  .portfolio , img {
+  .portfolio,
+  img {
     text-align: center;
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    margin-left: 10%;
+    margin-left: 18%;
     margin-top: 5%;
-    width: 65%;    
+    width: 55%;
   }
+
   .portfolio p {
-    text-align: left; 
-  }  
+    text-align: left;
+  }

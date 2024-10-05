@@ -1,10 +1,11 @@
-  /* CSS for the contact page */  
+  /* CSS for the contact page */
   .contact {
-    width: 65%;
+    width: 80%;
     margin-left: 10%;
     margin-top: 15%;
     padding: 2em, 1em;
   }
+
   .card-containter {
     display: flex;
     flex-wrap: wrap;
