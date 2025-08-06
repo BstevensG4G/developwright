@@ -13,9 +13,9 @@ services:
       - "/var/run/docker.sock:/var/run/docker.sock"
 
   frontend:
-    container_name: frontend
+    container_name: dwfrontend
     build: .
-    image: bills62/frontend:latest
+    image: bills62/dwfrontend:latest
     ports:
       - 80:80
     expose:

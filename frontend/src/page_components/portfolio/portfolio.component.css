@@ -1,15 +1,23 @@
   /* CSS for the portfolio page */
-  .portfolio,
-  img {
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    margin-left: 18%;
-    margin-top: 5%;
-    width: 55%;
+.portfolio {
+  width: 80%;
+  margin-top: 3%;
+}
+.portfolio img {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 15%;
+  margin-top: 1%;
+  width: 80%;
+}
+
+  .portfolio h2, p {
+    width: 65%;
+    margin-left: 15%;
+    margin-top: 3%;
   }
 
-  .portfolio p {
-    text-align: left;
+  .card-title {
+    text-align: center;
   }

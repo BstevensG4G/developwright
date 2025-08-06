@@ -2,11 +2,5 @@
   .contact {
     width: 80%;
     margin-left: 10%;
-    margin-top: 15%;
-    padding: 2em, 1em;
-  }
-
-  .card-containter {
-    display: flex;
-    flex-wrap: wrap;
+    margin-top: 3%;
   }

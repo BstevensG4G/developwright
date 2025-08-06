@@ -15,7 +15,7 @@ export interface Post {
 })
 export class PostComponent implements OnInit {
   posts: Post[] = [];
-  private baseUrl = 'http://127.0.0.1:5272'
+  private baseUrl = 'http://localhost:5272'
 
   constructor(private http: HttpClient) { }
 

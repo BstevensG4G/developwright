@@ -1,8 +1,9 @@
 footer {
-    margin-left: -3vw;
-    grid-area: foot;
-    text-align: center;
-    font: small;            
+  margin-top: 5%;
+  margin-left: -3vw;
+  grid-area: foot;
+  text-align: center;
+  font: small;            
 }
 .social-icon__item {
   list-style: none;

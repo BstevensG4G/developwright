@@ -15,3 +15,7 @@ body {
     grid-template:
         "header header header" minmax(100px, auto) "nav nav nav" minmax(75px, auto) "main main main" minmax(350px, auto) "main main main" minmax(200px, auto) "footer footer footer" minmax(110px, auto);
 }
+
+.card {
+    border-radius: 8px;
+}

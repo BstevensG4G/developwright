@@ -1,0 +1,30 @@
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10%;
+}
+
+label {
+    align-items: first baseline;
+    color: rgb(188, 227, 199);
+}
+
+input{
+    width: 20vw;
+    margin-left: 3em;
+    margin-bottom: .5em;
+    background-color: gray;
+    color: white;
+}
+
+textarea {
+    width: 40vw;
+    min-height: 15em;
+    background-color: gray;
+    color: white;
+}
+
+button {
+    margin-left: 10em;
+    width: 5em;
+}
